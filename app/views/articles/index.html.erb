@@ -1,11 +1,21 @@
-<h1>All Articles</h1>
+<% @articles.each do |article| %>
+<div class="post-preview">
+  <a href="<%= article_path(article) %>">
+		<h2 class="post-title">
+			<%= article.title %>
+		</h2>
+		<h3 class="post-subtitle">
+			Subtitulo ainda nao implementado
+		</h3>
+	</a>
+	<p class="post-meta">
+		"Posted by J Alex on September 24, 2014"
+	</p>
+</div>
+<hr>
+<% end %>
 
-<ul id="articles">
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article), class: 'article_title' %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% if logged_in? %>
+	<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% end %>
+</div>

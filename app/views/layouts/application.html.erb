@@ -7,9 +7,66 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="flash"><%= flash.notice %></p>
+  <div id="wrapper">
 
-<%= yield %>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+              <a href="<%= root_url %>">
+                <h1>J Alex's Blog</h1>
+              </a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li class="sidebar-brand">
+                <%= link_to "Tag List", tags_url %>
+            </li>
+            <% unless getTags.nil? %>
+              <% getTags.each do |tag| %>
+                <li>
+                    <%= link_to tag.name.capitalize, tag_path(tag) %>
+                </li>
+              <% end %>
+            <% end %>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+            <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class='container'>
+        <div class="row col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <%= yield %>
+          <hr>
+          <h6>
+            <% if logged_in? %>
+              <%= "Logged in as #{current_user.email}" %>
+              <%= link_to "(logout)", logout_path %>
+            <% else %>
+              <%= link_to "(login)", login_path %>
+            <% end %>
+          </h6>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
 </body>
 </html>
