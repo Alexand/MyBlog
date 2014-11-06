@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'rails_12factor'
 gem 'paperclip'
 gem 'sorcery'
+gem 'pygments.rb'
+gem 'redcarpet'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
