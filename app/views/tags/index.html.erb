@@ -1,6 +1,10 @@
 <h1>Tag List</h1>
 <ul>
 <% @tags.each do |tag| %>
-	<li><%= tag.name.capitalize %> - <%= link_to 'delete', tag_path(tag), method: :delete  %></li>
+	<li>
+		<%= link_to tag.name.capitalize, tag_path(tag) %> 
+		<% if logged_in? %>
+			- <%= link_to 'delete', tag_path(tag), method: :delete  %></li>
+		<% end %>
 <% end %>
 </ul>
