@@ -6,6 +6,20 @@
 
 /* Toggle Styles */
 
+a.navbar-brand{
+    padding-left: 70px;
+}
+.navbar-right{
+    padding-right: 30px;
+}
+
+.avatar {
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -22,6 +36,7 @@
     z-index: 1000;
     position: fixed;
     left: 250px;
+    top: 50px;
     width: 0;
     height: 100%;
     margin-left: -250px;
@@ -40,6 +55,8 @@
 #page-content-wrapper {
     width: 100%;
     padding: 15px;
+    position: fixed;
+    top: 50px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -88,6 +105,10 @@
 
 .sidebar-nav > .sidebar-brand a {
     color: #999999;
+}
+
+.sidebar-brand.myAvatar{
+    margin-bottom: 50px;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
