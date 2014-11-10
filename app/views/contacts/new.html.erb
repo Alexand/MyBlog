@@ -1,0 +1,28 @@
+  <% content_for :title, 'Talk to Me' %>
+  
+  <div class="alert alert-warning col-lg-12 col-md-12 fade in" style="display:none;" aria-hidden="true">
+    <button type="button" class="close" onclick="$(this).parent().closest('div').fadeOut()">&times;</button>
+    <div id="flash_warning"></div>
+  </div>
+  <%= form_for @contact, role: :form do |f| %>
+    <div class="form-group">
+      <%= label_tag :name, 'Your Name' %>
+      <%= f.text_field :name, :required => true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :email, 'Your Email' %>
+      <%= f.email_field :email, :required => true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :message %>
+      <%= f.text_area :message, :as => :text, :required => true, class: 'form-control' %>
+    </div>
+    <div class= "hidden">
+      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+    </div>
+    <div>
+      </br>
+      <%= submit_tag "Submit", class: 'btn btn-primary btn-sm', onclick: 'validateContactForm();' %>
+    </div>
+  <% end %>
+

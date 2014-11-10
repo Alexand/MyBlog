@@ -1,4 +1,4 @@
-<h2 class="post-title"><%= @article.title %></h2>
+<% content_for :title, @article.title %>
 <h3 class="post-subtitle"><%= @article.subtitle %></h3>
 <% if @article.image.exists? %>
 	<p><%= image_tag @article.image.url(:medium) %></p>

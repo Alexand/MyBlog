@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   get 'login'  => 'author_sessions#new'
   get 'logout' => 'author_sessions#destroy'
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 end

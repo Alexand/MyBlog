@@ -1,4 +1,4 @@
-<h1>Articles Tagged with <%= @tag.name %></h1>
+<% content_for :title, "Articles Tagged with #{@tag.name.capitalize}" %>
 
 <ul>
   <% @tag.articles.each do |article| %>

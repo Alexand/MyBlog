@@ -19,6 +19,8 @@ gem 'paperclip'
 gem 'sorcery'
 gem 'pygments.rb'
 gem 'redcarpet'
+gem 'mail_form'
+gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
