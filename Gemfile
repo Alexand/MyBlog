@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'mail_form'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'unicorn'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
