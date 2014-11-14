@@ -44,13 +44,13 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand myAvatar">
-              <%= image_tag('avatar.jpg', alt: 'slidebg1', class: 'img-circle img-responsive avatar') %>
+              <%= link_to image_tag('avatar.jpg', alt: 'slidebg1', class: 'img-circle img-responsive avatar'), contacts_path %>
             </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <%= link_to 'Contact', contacts_path %>
+            <li class="itens">
+                <%= link_to icon('home'), root_path, class: :itens %>
+                <%= link_to '<span class="glyphicon glyphicon-envelope " aria-hidden="true"></span>'.html_safe, contacts_path, class: :itens %>
+                <%= link_to icon('stack-exchange'), contacts_path, class: :itens %>
+                <%= link_to icon('github'), contacts_path, class: :itens %>
             </li>
             <li class="sidebar-brand">
                 <%= link_to "Tag List", tags_url %>

@@ -84,6 +84,10 @@ a.navbar-brand{
     display: block;
     text-decoration: none;
     color: #999999;
+    
+    &.itens{
+        display: inline;
+    }
 }
 
 .sidebar-nav li a:hover {
