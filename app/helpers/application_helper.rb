@@ -14,9 +14,12 @@ module ApplicationHelper
       autolink: true,
       no_intra_emphasis: true,
       fenced_code_blocks: true,
-      lax_html_blocks: true,
+      lax_spacing: true,
       strikethrough: true,
-      superscript: true
+      superscript: true,
+      highlight: true,
+      filter_html: false,
+      escape_html: false
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
