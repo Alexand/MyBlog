@@ -24,6 +24,10 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
+  def kramdown(text)
+    Kramdown::Document.new(text).to_html.html_safe
+  end
+
 	def getTags
   	@tags = Tag.all
   end

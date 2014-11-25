@@ -1,6 +1,6 @@
 <% content_for :title, @article.title %>
 <% if @article.image.exists? %>
-	<p><%= image_tag @article.image.url(:medium) %></p>
+	<p><%= image_tag @article.image.url %></p>
 <% end %>
 
 <p>
@@ -10,7 +10,7 @@
   <% end %>
 </p>
 
-<p><%= markdown @article.body %></p>
+<p><%= kramdown @article.body %></p>
 
 <% if logged_in? %>
 	<%= link_to "edit", edit_article_path(@article) %>

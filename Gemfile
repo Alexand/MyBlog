@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'unicorn'
 gem 'newrelic_rpm'
+gem 'kramdown'
+gem 'coderay'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
