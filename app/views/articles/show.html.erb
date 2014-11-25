@@ -1,14 +1,14 @@
 <% content_for :title, @article.title %>
-<% if @article.image.exists? %>
-	<p><%= image_tag @article.image.url %></p>
-<% end %>
-
 <p>
   Tags:
   <% @article.tags.each do |tag| %>
     <%= link_to tag.name.capitalize, tag_path(tag) %>
   <% end %>
 </p>
+
+<% if @article.image.exists? %>
+	<p><%= image_tag @article.image.url %></p>
+<% end %>
 
 <p><%= kramdown @article.body %></p>
 
